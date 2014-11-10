@@ -8,7 +8,7 @@ Time : 9.15am
 
 ## Aim
 
-Let's Make something! Inspired by [NodeBoats at JSConf](makezine.com/2014/06/02/turning-coders-into-makers-at-jsconf-2014/)
+Let's Make something! Inspired by [NodeBoats at JSConf](http://makezine.com/2014/06/02/turning-coders-into-makers-at-jsconf-2014/)
 
 Let's build boats that can be controlled by Web technologies. We will make boats that can communicate over WiFi to a Node app.
 
