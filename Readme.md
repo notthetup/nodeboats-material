@@ -2,8 +2,11 @@
 
 Nodeboat Builder workshop at JSConf.Asia 2014
 
+
 Date : 20th November 2014
+
 Venue : Amara Sanctuary, Sentosa, Singapore
+
 Time : 9.15am
 
 ## Aim
