@@ -14,11 +14,11 @@
 - Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark API
 
   ```
-  $ curl https://api.spark.io/v1/devices/<device_id>?access_token=<access_token>
+  $ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
 
   {
-    "id": "<device_id>",
-    "name": "<device_name>",
+    "id": "{DEVICE_ID}",
+    "name": "{DEVICE_NAME}",
     "connected": true,
     "variables": {},
     "functions": [
@@ -32,11 +32,11 @@
 - Now, turn on the D7 LED with Spark API using the HTTP POST request
 
   ```
-  curl https://api.spark.io/v1/devices/<device_id>/digitalwrite -d access_token=<access_token> -d params=D7,HIGH
+  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,LOW
 
   {
-    "id": "<device_id>",
-    "name": "laser_hobo",
+    "id": "{DEVICE_ID}",
+    "name": "{DEVICE_NAME}",
     "last_app": null,
     "connected": true,
     "return_value": 1
