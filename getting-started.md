@@ -179,8 +179,8 @@
 	<tr>
 		<td>3</td>
 		<td>Motor Driver chip L293NE (<a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">datasheet</a>)</td>
-		<td><a href="img/chip.png"></a></td>
-		<td><a href="img/chip-pic.png"></a></td>
+		<td><img src="img/chip.png"></td>
+		<td><img src="img/chip-pic.png"></td>
 	</tr>
 	<tr>
 		<td>4</td>
@@ -198,7 +198,7 @@
 		<td>6</td>
 		<td>jumper cables</td>
 		<td><img src="img/cables.png"></td>
-		<td><img src="mg/cables-pic.jpg"></td>
+		<td><img src="img/cables-pic.jpg"></td>
 	</tr>
 	<tr>
 		<td>7</td>
