@@ -166,20 +166,59 @@
 	</tr>
 	<tr>
 		<td>1</td>
-		<td>[Breadboard](http://en.wikipedia.org/wiki/Breadboard)</td>
-		<td>![](img/breadboard.png)</td>
-		<td>![](img/breadboard-pic.png)</td>
+		<td><a href="http://en.wikipedia.org/wiki/Breadboard">Breadboard</a></td>
+		<td><img src="img/breadboard.png"></td>
+		<td><img src="img/breadboard-pic.png"></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Spark Core</td>
+		<td><img src="img/spark.png"></td>
+		<td><img src="img/spark-pic.png"></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Motor Driver chip L293NE (<a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">datasheet</a>)</td>
+		<td><a href="img/chip.png"></a></td>
+		<td><a href="img/chip-pic.png"></a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Diode</td>
+		<td><img src="img/diode.png"></td>
+		<td><img src="img/diode-pic.jpg"></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>LED</td>
+		<td><img src="img/led.png"></td>
+		<td><img src="img/led-pic.jpg"></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>jumper cables</td>
+		<td><img src="img/cables.png"></td>
+		<td><img src="mg/cables-pic.jpg"></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>battery pack</td>
+		<td><img src="img/batteries.png"></td>
+		<td><img src="img/batteries-pic.png"></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>Tamiya motors</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td>servo</td>
+		<td></td>
+		<td></td>
 	</tr>
 </table>
-
-2  | Spark Core | ![](img/spark.png) | ![](img/spark-pic.png)
-3  | Motor Driver chip L293NE ([datasheet](http://www.ti.com/lit/ds/symlink/l293d.pdf)) | ![](img/chip.png) | ![](img/chip-pic.png)
-4  | Diode | ![](img/diode.png) | ![](img/diode-pic.jpg)
-5  | LED | ![](img/led.png) | ![](img/led-pic.jpg)
-6  | jumper cables |![](img/cables.png) | ![](img/cables-pic.jpg)
-7  | battery pack | ![](img/batteries.png) | ![](img/batteries-pic.png)
-8  | Tamiya motors |  |
-9  | servo |  |
 
 #Chapter 2 - Motors
 
