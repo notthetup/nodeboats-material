@@ -1,3 +1,5 @@
+#Chapter 1 - Spark Core
+
 #Step 1: Setup
 
 ####Aim: Turn on and off the `D7` LED on Spark Core from the mobile app
@@ -151,3 +153,7 @@
 		- `>> led.blink()`
 		- `>> led.stop()`
 		
+#Chapter 2 - Motors
+
+
+#Chapter 3 - Lets make Boat!
