@@ -24,11 +24,11 @@
 1. Get your `Device ID` and `Access Token`
 	1. Get your `Device ID` from [here](https://www.spark.io/build/new#cores) and click on `Core`
 	
-	![](getting-started/device-id.png)
+	![](img/device-id.png)
 
 	- Get your `Access Token` from [here](https://www.spark.io/build/new#cores) and click on `Settings`
 	
-	![](getting-started/access-token.png)
+	![](img/access-token.png)
 - Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark API. Note the 4 exposed functions "digitalread", "digitalwrite", "analogread" and "analogwrite"
 
   ```
