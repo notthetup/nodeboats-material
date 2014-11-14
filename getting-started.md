@@ -157,17 +157,17 @@
 
 1. **Component list**
 
-	#  | Name| Schematic|Photo
-	------------- | -------------
-	1  | [Breadboard](http://en.wikipedia.org/wiki/Breadboard) | ![](img/breadboard.png) | ![](img/breadboard-pic.png)
-	2  | Spark Core | ![](img/spark.png) | ![](img/spark-pic.png)
-	3  | Motor Driver chip L293NE ([datasheet](http://www.ti.com/lit/ds/symlink/l293d.pdf)) | ![](img/chip.png) | ![](img/chip-pic.png)
-	4  | Diode | ![](img/diode.png) | ![](img/diode-pic.jpg)
-	5  | LED | ![](img/led.png) | ![](img/led-pic.jpg)
-	6  | jumper cables |![](img/cables.png) | ![](img/cables-pic.jpg)
-	7  | battery pack | ![](img/batteries.png) | ![](img/batteries-pic.png)
-	8  | Tamiya motors |  |
-	9  | servo |  |
+#  | Name| Schematic|Photo
+--- | ----|-----|----
+1  | [Breadboard](http://en.wikipedia.org/wiki/Breadboard) | ![](img/breadboard.png) | ![](img/breadboard-pic.png)
+2  | Spark Core | ![](img/spark.png) | ![](img/spark-pic.png)
+3  | Motor Driver chip L293NE ([datasheet](http://www.ti.com/lit/ds/symlink/l293d.pdf)) | ![](img/chip.png) | ![](img/chip-pic.png)
+4  | Diode | ![](img/diode.png) | ![](img/diode-pic.jpg)
+5  | LED | ![](img/led.png) | ![](img/led-pic.jpg)
+6  | jumper cables |![](img/cables.png) | ![](img/cables-pic.jpg)
+7  | battery pack | ![](img/batteries.png) | ![](img/batteries-pic.png)
+8  | Tamiya motors |  |
+9  | servo |  |
 
 #Chapter 2 - Motors
 
