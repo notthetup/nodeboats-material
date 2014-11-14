@@ -157,9 +157,21 @@
 
 1. **Component list**
 
-#  | Name| Schematic|Photo
---- | ----|-----|----
-1  | [Breadboard](http://en.wikipedia.org/wiki/Breadboard) | ![](img/breadboard.png) | ![](img/breadboard-pic.png)
+<table>
+	<tr>
+		<td>#</td>
+		<td>Name</td>
+		<td>Schematic</td>
+		<td>Photo</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>[Breadboard](http://en.wikipedia.org/wiki/Breadboard)</td>
+		<td>![](img/breadboard.png)</td>
+		<td>![](img/breadboard-pic.png)</td>
+	</tr>
+</table>
+
 2  | Spark Core | ![](img/spark.png) | ![](img/spark-pic.png)
 3  | Motor Driver chip L293NE ([datasheet](http://www.ti.com/lit/ds/symlink/l293d.pdf)) | ![](img/chip.png) | ![](img/chip-pic.png)
 4  | Diode | ![](img/diode.png) | ![](img/diode-pic.jpg)
