@@ -201,6 +201,7 @@
 		<td>Name & Notes</td>
 		<td>Schematic</td>
 		<td>Photo</td>
+		<td>Notes</td>
 	</tr>
 	<tr>
 		<td>1</td>
@@ -221,6 +222,8 @@
 		</td>
 		<td><img height=150 src="img/breadboard.png"></td>
 		<td><img height=150 src="img/breadboard-pic.png"></td>
+		<td></td>
+
 	</tr>
 	<tr>
 		<td>2</td>
@@ -269,7 +272,7 @@
 		<td>Tamiya motors</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td>Motors don't have a Positive/Negative terminal. Depends on how they are attached they can either run forward or backward. </td>
 	</tr>
 	<tr>
 		<td>9</td>
