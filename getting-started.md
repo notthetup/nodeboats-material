@@ -155,18 +155,70 @@
 
 ##Step 4: Wire up!
 
+- Wire up with 2 LEDs instead of 2 motors
+
+	- *Insert schematics*
+- Run the node script
+
+	```
+	var five = require("johnny-five");
+	var Spark = require("spark-io");
+	var board = new five.Board({
+	  io: new Spark({
+	    token: process.env.SPARK_TOKEN,
+	    deviceId: process.env.SPARK_DEVICE_ID
+	  })
+	});
+
+	board.on("ready", function() {
+	  motorL = new five.Motor({
+	    pin: 'A7'
+	  });
+
+	  motorR = new five.Motor({
+	    pin: 'A6'
+	  });
+
+	  board.repl.inject({
+	    l: motorL,
+	    r: motorR
+	  });
+
+	});
+	```
+
+
+
+#Chapter 2 - Motors
+
+##Step 1: Get to know the components
+
 1. **Component list**
 
 <table>
 	<tr>
 		<td>#</td>
-		<td>Name</td>
+		<td>Name & Notes</td>
 		<td>Schematic</td>
 		<td>Photo</td>
 	</tr>
 	<tr>
 		<td>1</td>
-		<td><a href="http://en.wikipedia.org/wiki/Breadboard">Breadboard</a></td>
+		<td>
+			<strong>Breadboard</strong>
+			<ul>
+				<li><a href="http://en.wikipedia.org/wiki/Breadboard">Wikipedia</a></li>
+				<li>Wiring pattern in a breadboard<br><img src="img/wiring.png"></li>
+				<li>
+					<strong>Horizontal rows</strong>
+					<ul>
+						<li>HIGH / Vin (~6V)</li>
+						<li>LOW / GND (0V)</li>
+					</ul>
+				<li>
+				<li><strong>Tip: </strong> Plug in the +/- of the batteries to the horizontal rows and connect +/- ends from any components on the breadboard to these lines.</li>
+			</ul>
+		</td>
 		<td><img height=150 src="img/breadboard.png"></td>
 		<td><img height=150 src="img/breadboard-pic.png"></td>
 	</tr>
@@ -175,40 +227,47 @@
 		<td>Spark Core</td>
 		<td><img height=150 src="img/spark.png"></td>
 		<td><img height=150 src="img/spark-pic.png"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>3</td>
 		<td>Motor Driver chip L293NE (<a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">datasheet</a>)</td>
 		<td><img height=150 src="img/chip.png"></td>
 		<td><img height=150 src="img/chip-pic.png"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>4</td>
 		<td>Diode</td>
 		<td><img height=150 src="img/diode.png"></td>
 		<td><img height=150 src="img/diode-pic.jpg"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>5</td>
 		<td>LED</td>
 		<td><img height=150 src="img/led.png"></td>
 		<td><img height=150 src="img/led-pic.jpg"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>6</td>
 		<td>jumper cables</td>
 		<td><img height=150 src="img/cables.png"></td>
 		<td><img height=150 src="img/cables-pic.jpg"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>7</td>
 		<td>battery pack</td>
 		<td><img height=150 src="img/batteries.png"></td>
 		<td><img height=150 src="img/batteries-pic.png"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>8</td>
 		<td>Tamiya motors</td>
+		<td></td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -217,9 +276,9 @@
 		<td>servo</td>
 		<td></td>
 		<td></td>
+		<td></td>
 	</tr>
 </table>
 
-#Chapter 2 - Motors
 
 #Chapter 3 - Lets make Boat!
