@@ -33,7 +33,7 @@
 	![](img/access-token.png)
 - Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark API. Note the 4 exposed functions "digitalread", "digitalwrite", "analogread" and "analogwrite"
 
-  ```
+  ```shell
   $ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
 
   {
@@ -53,7 +53,7 @@
 
 	1. Turn on the LED with params `D7,HIGH`
 
-	  ```
+	  ```shell
 	  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,HIGH
 
 	  {
@@ -66,7 +66,7 @@
 	  ```
 	- Turn off the LED with params `D7,LOW`
 
-	  ```
+	  ```shell
 	  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,HIGH
 
 	  {
@@ -86,7 +86,7 @@
 	1. Load the firmware with just the [5-step instructions](https://github.com/voodootikigod/voodoospark#loading-the-firmware)
 	- Run the curl command again and see what functions are exposed now
 
-		```
+		```shell
 		$ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
 
 		{
@@ -102,7 +102,7 @@
 		```
 	- Check the local IP address of the Spark Core. `result` will give you the IP.
 
-		```
+		```shell
 		$ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/endpoint
 
 		{
@@ -125,7 +125,7 @@
 	- Create the [blinking LED with Johnny Five plugin](https://github.com/rwaldron/spark-io#johnny-five-io-plugin)
 	- Create another node script. When you run this the [node repl](http://nodejs.org/api/repl.html) will appear
 
-		```
+		```js
 		var five = require("johnny-five");
 		var Spark = require("spark-io");
 
@@ -152,40 +152,6 @@
 		Blink / stop the LED in the repl with these commands:
 		- `>> led.blink()`
 		- `>> led.stop()`
-
-##Step 4: Wire up!
-
-- Wire up with 2 LEDs instead of 2 motors
-
-	- *Insert schematics*
-- Run the node script
-
-	```
-	var five = require("johnny-five");
-	var Spark = require("spark-io");
-	var board = new five.Board({
-	  io: new Spark({
-	    token: process.env.SPARK_TOKEN,
-	    deviceId: process.env.SPARK_DEVICE_ID
-	  })
-	});
-
-	board.on("ready", function() {
-	  motorL = new five.Motor({
-	    pin: 'A7'
-	  });
-
-	  motorR = new five.Motor({
-	    pin: 'A6'
-	  });
-
-	  board.repl.inject({
-	    l: motorL,
-	    r: motorR
-	  });
-
-	});
-	```
 
 #Chapter 2 - Motors & Servo
 
@@ -334,7 +300,7 @@
 1. Follow the schematic below and wire it up accordingly with LEDs instead of motors.
 - Create a file `motor.js` with the following code:
 
-	```
+	```js
 	var five = require("johnny-five");
 	var Spark = require("spark-io");
 	var board = new five.Board({
@@ -378,7 +344,7 @@
 1. Follow the schematic below and add on the servo.
 - Create a file `servo.js` with the following code:
 
-	```
+	```js
 	var five = require("johnny-five");
 	var Spark = require("spark-io");
 
