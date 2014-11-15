@@ -163,58 +163,69 @@
 		<td>Name</td>
 		<td>Schematic</td>
 		<td>Photo</td>
+		<td>Notes</td>
 	</tr>
 	<tr>
 		<td>1</td>
 		<td><a href="http://en.wikipedia.org/wiki/Breadboard">Breadboard</a></td>
 		<td><img height=150 src="img/breadboard.png"></td>
 		<td><img height=150 src="img/breadboard-pic.png"></td>
+		<td></td>
+
 	</tr>
 	<tr>
 		<td>2</td>
 		<td>Spark Core</td>
 		<td><img height=150 src="img/spark.png"></td>
 		<td><img height=150 src="img/spark-pic.png"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>3</td>
 		<td>Motor Driver chip L293NE (<a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">datasheet</a>)</td>
 		<td><img height=150 src="img/chip.png"></td>
 		<td><img height=150 src="img/chip-pic.png"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>4</td>
 		<td>Diode</td>
 		<td><img height=150 src="img/diode.png"></td>
 		<td><img height=150 src="img/diode-pic.jpg"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>5</td>
 		<td>LED</td>
 		<td><img height=150 src="img/led.png"></td>
 		<td><img height=150 src="img/led-pic.jpg"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>6</td>
 		<td>jumper cables</td>
 		<td><img height=150 src="img/cables.png"></td>
 		<td><img height=150 src="img/cables-pic.jpg"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>7</td>
 		<td>battery pack</td>
 		<td><img height=150 src="img/batteries.png"></td>
 		<td><img height=150 src="img/batteries-pic.png"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>8</td>
 		<td>Tamiya motors</td>
 		<td></td>
 		<td></td>
+		<td>Motors don't have a Positive/Negative terminal. Depends on how they are attached they can either run forward or backward. </td>
 	</tr>
 	<tr>
 		<td>9</td>
 		<td>servo</td>
+		<td></td>
 		<td></td>
 		<td></td>
 	</tr>
