@@ -187,21 +187,16 @@
 	});
 	```
 
+#Chapter 2 - Motors & Servo
 
+##Step 1: Know the components
 
-#Chapter 2 - Motors
-
-##Step 1: Get to know the components
-
-1. **Component list**
-
-<table>
+<table style="vertical-slign:top;">
 	<tr>
-		<td>#</td>
-		<td>Name & Notes</td>
-		<td>Schematic</td>
-		<td>Photo</td>
-		<td>Notes</td>
+		<td width="4%">#</td>
+		<td width="32%">Name & Notes</td>
+		<td width="32%">Schematic</td>
+		<td width="32%">Photo</td>
 	</tr>
 	<tr>
 		<td>1</td>
@@ -214,74 +209,203 @@
 					<strong>Horizontal rows</strong>
 					<ul>
 						<li>HIGH / Vin (~6V)</li>
-						<li>LOW / GND (0V)</li>
+						<li>LOW / Gnd (0V)</li>
 					</ul>
-				<li>
+				</li>
 				<li><strong>Tip: </strong> Plug in the +/- of the batteries to the horizontal rows and connect +/- ends from any components on the breadboard to these lines.</li>
 			</ul>
 		</td>
 		<td><img height=150 src="img/breadboard.png"></td>
 		<td><img height=150 src="img/breadboard-pic.png"></td>
-		<td></td>
-
 	</tr>
 	<tr>
 		<td>2</td>
-		<td>Spark Core</td>
+		<td>
+			<strong>Spark Core</strong>
+			<ul>
+				<li><a href="http://docs.spark.io/assets/images/spark-pinout.png">pinout diagram</a></li>
+				<li><a href="http://docs.spark.io/start/#step-3-connect-your-core-to-the-cloud">LED colors/actions and their meanings</a></li>
+			</ul>
+		</td>
 		<td><img height=150 src="img/spark.png"></td>
 		<td><img height=150 src="img/spark-pic.png"></td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>3</td>
-		<td>Motor Driver chip L293NE (<a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">datasheet</a>)</td>
+		<td>
+			<strong>Motor Driver chip L293NE</strong>
+			<ul>
+			 	<li><a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">datasheet</a></li>
+			 	<li><strong>Tip:</strong> Note the position of the notch on the schematic and place this chip on the breadboard accordingly. It will help to point out the pin positions for debugging and wiring.</li>
+		 	</ul>
+		 </td>
 		<td><img height=150 src="img/chip.png"></td>
 		<td><img height=150 src="img/chip-pic.png"></td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>4</td>
-		<td>Diode</td>
+		<td>
+			<strong>Diode</strong>
+			<ul>
+				<li><a href="http://en.wikipedia.org/wiki/Diode">Wikipedia</a></li>
+				<li>diode polarity<br><img src="img/diode-polarity.png"></li>
+				<li>
+					In this case, the diodes are used for inductive transient suppression
+					<br>
+					<img src="img/diode-use.png" height=150>
+				</li>
+				<li><strong>Tip: </strong> Note the white strip (cathode) of the diode while wiring up the breadboard. The anode is connected to the ground.</li>
+			</ul>
+		</td>
 		<td><img height=150 src="img/diode.png"></td>
 		<td><img height=150 src="img/diode-pic.jpg"></td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>5</td>
-		<td>LED</td>
+		<td>
+			<strong>LED</strong> (light emitting diode)
+			<ul>
+				<li><a href="http://en.wikipedia.org/wiki/Light-emitting_diode">Wikipedia</a></li>
+				<li>
+					LED polarity
+					<ul>
+						<li><strong>shorter leg: </strong>cathode - connect to ground</li>
+						<li><strong>longer leg: </strong>anode - connect to power</li>
+					</ul>
+				</li>
+				<li><strong>Tip: </strong>Instead of connecting to the motors/servo initially, use these LEDs for easier debugging.</li>
+			</ul>
+		</td>
 		<td><img height=150 src="img/led.png"></td>
 		<td><img height=150 src="img/led-pic.jpg"></td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>6</td>
-		<td>jumper cables</td>
+		<td>
+			<strong>jumper cables</strong>
+			<ul>
+				<li><strong>Tip: </strong>Use the same color wires as the schematic so that it will be faster to trace the wires for debugging. E.g. use <strong>RED</strong> for power and <strong>BLACK</strong> for ground. <strong>YELLOW</strong> and <strong>GREEN</strong> for the motor endpoints.</li>
+			</ul>
+		</td>
 		<td><img height=150 src="img/cables.png"></td>
 		<td><img height=150 src="img/cables-pic.jpg"></td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>7</td>
-		<td>battery pack</td>
+		<td>
+			<strong>battery pack</strong>
+			<ul>
+				<li>We will use 4 <a href="http://en.wikipedia.org/wiki/AA_battery">AA batteries</a> of 6V</li>
+				<li><strong>Tip: </strong>Connect the +/- ends of the battery pack to the horizontal lines of the breadboard</li>
+			</ul>
+		</td>
 		<td><img height=150 src="img/batteries.png"></td>
 		<td><img height=150 src="img/batteries-pic.png"></td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>8</td>
-		<td>Tamiya motors</td>
-		<td></td>
-		<td></td>
-		<td>Motors don't have a Positive/Negative terminal. Depends on how they are attached they can either run forward or backward. </td>
+		<td>
+			<strong>Motors</strong>
+			<ul>
+				<li><strong>Note: </strong>Motors don't have a Positive/Negative terminal. Depends on how they are attached they can either run forward or backward. </li>
+				<li><strong>Tip: </strong>Use an LED to check for high and low before connecting the motors.</li>
+			</ul>
+		</td>
+		<td><img src="img/motor.png"></td>
+		<td><img src="img/motor-pic.png"></td>
 	</tr>
 	<tr>
 		<td>9</td>
-		<td>servo</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>
+			<strong>Servo</strong>
+			<ul>
+				<li><a href="http://en.wikipedia.org/wiki/Servo_(radio_control)">Wikipedia</a></li>
+				<li><a href="http://docs.spark.io/shields/#setting-up-the-shield-8-micro-servo-1">Spark and servo</a></li>
+				<li><strong>Tip: </strong>For wiring - <em>Yellow</em> is Signal (D0, D1, A0, A1, A4, A5, A6, A7), <em>Orange</em> is +5V (VIN), <em>Brown</em> is ground</li>
+			</ul>
+		</td>
+		<td><img src="img/servo.png"></td>
+		<td><img src="img/servo-pic.png"></td>
 	</tr>
 </table>
 
+##Step 2: Wire up with an LED, then motor
+
+1. Follow the schematic below and wire it up accordingly with LEDs instead of motors.
+- Create a file `motor.js` with the following code:
+
+	```
+	var five = require("johnny-five");
+	var Spark = require("spark-io");
+	var board = new five.Board({
+	  io: new Spark({
+	    token: process.env.SPARK_TOKEN,
+	    deviceId: process.env.SPARK_DEVICE_ID
+	  })
+	});
+
+	board.on("ready", function() {
+	  motorL = new five.Motor({
+	    pin: 'A7'
+	  });
+
+	  motorR = new five.Motor({
+	    pin: 'A6'
+	  });
+
+	  board.repl.inject({
+	    l: motorL,
+	    r: motorR
+	  });
+
+	});
+	```
+	Run this code with `node motor.js` - can you hear the motors running?
+
+	```
+	>> r.start(50) // right LED should light up dim
+	>> r.start(100) // right LED should light up bright
+	>> r.stop() // right LED should not light up
+
+	>> l.start(50) // left LED should light up dim
+	>> l.start(100) // left LED should light up bright
+	>> l.stop() // left LED should not light up
+	```
+- Now, replace the LEDs with motors! And run the same above code. VVvvvrrroooommmm vvrrrroooommm ;-)
+
+##Step 3: Add on the servo
+
+1. Follow the schematic below and add on the servo.
+- Create a file `servo.js` with the following code:
+
+	```
+	var five = require("johnny-five");
+	var Spark = require("spark-io");
+
+	var board = new five.Board({
+	  io: new Spark({
+	    token: process.env.SPARK_TOKEN,
+	    deviceId: process.env.SPARK_DEVICE_ID
+	  })
+	});
+
+	board.on("ready", function() {
+	  var led = new five.Led("D7");
+
+	  board.repl.inject({
+	    led: led
+	  });
+
+	});
+	```
+	Run this code with `node servo.js` - yes the servo should move!
+
+	```
+	>> s.min() // set the servo to the minimum degrees, default to 0
+	>> s.max() // set the servo to the maximum degrees, default to 180
+	>> s.to(90) // move the servo to move the servo to degree 90
+	```
+- play with other [servo functions from Johnny Five](https://github.com/rwaldron/johnny-five/blob/master/docs/servo.md)
+- Onwards to making the boat now. Yiiiihooooo ;-)
 
 #Chapter 3 - Lets make Boat!
