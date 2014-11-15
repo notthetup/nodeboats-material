@@ -328,7 +328,7 @@
 	```
 	Run this code with `node motor.js` - can you hear the motors running?
 
-	```
+	```js
 	>> r.start(50) // right LED should light up dim
 	>> r.start(100) // right LED should light up bright
 	>> r.stop() // right LED should not light up
@@ -366,7 +366,7 @@
 	```
 	Run this code with `node servo.js` - yes the servo should move!
 
-	```
+	```js
 	>> s.min() // set the servo to the minimum degrees, default to 0
 	>> s.max() // set the servo to the maximum degrees, default to 180
 	>> s.to(90) // move the servo to move the servo to degree 90
