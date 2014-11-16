@@ -293,11 +293,32 @@
 		<td><img src="img/servo.png"></td>
 		<td><img src="img/servo-pic.png"></td>
 	</tr>
+	<tr>
+		<td>10</td>
+		<td>
+			<strong>Capacitor</strong>
+			<ul>
+				<li><a href="http://en.wikipedia.org/wiki/Capacitor">Wikipedia</a></li>
+				<li><a href="http://docs.spark.io/shields/#setting-up-the-shield-2-electrolytic-capacitor-100uf-5">Capacitors</a></li>
+				<li><strong>Tip: </strong> Capacitors have polarity. On the plastic above one of the pins you'll see a light coloured strip with a negative sign "-" on it. Always connect that pin to GND pins or rails </li>
+			</ul>
+		</td>
+		<td><img src="img/capacitor.jpg"></td>
+		<td><img src="img/capacitor-pic.jpg"></td>
+	</tr>
 </table>
 
 ##Step 2: Wire up with an LED, then motor
 
-1. Follow the schematic below and wire it up accordingly with LEDs instead of motors.
+1. Follow the schematic below and wire it up accordingly with LEDs instead of 
+motors.
+
+![Motor Controller with LED](img/motor-controller-schematic.png)
+
+
+The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics). 
+
+
 - Create a file `motor.js` with the following code:
 
 	```js
@@ -337,12 +358,25 @@
 	>> l.start(100) // left LED should light up bright
 	>> l.stop() // left LED should not light up
 	```
-- Now, replace the LEDs with motors! And run the same above code. VVvvvrrroooommmm vvrrrroooommm ;-)
+- Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. VVvvvrrroooommmm vvrrrroooommm ;-)
+
+![Motor Controller with Motors](img/motors-schematic.png)
+
+The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics). 
+
+
+- This method of connecting the motor allows us to either turn the motor on or off. You can't control the direction of the motor. If you accidently wired the motor such that it runs backwards then just swap the two pins that connect to the motor.
 
 ##Step 3: Add on the servo
 
 1. Follow the schematic below and add on the servo.
-- Create a file `servo.js` with the following code:
+
+![Motor Controller with Servo](img/motors-schematic.png)
+
+The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics). 
+
+-
+ Create a file `servo.js` with the following code:
 
 	```js
 	var five = require("johnny-five");
@@ -375,3 +409,46 @@
 - Onwards to making the boat now. Yiiiihooooo ;-)
 
 #Chapter 3 - Lets make Boat!
+
+## Boyancy
+
+1. Boyancy is critical in making boats. You don't want your boat to sink! 
+
+- Ensure that no water EVER! contacts the electronics. Water and electronics don't mix.
+
+- If your boat is heavy and has large portions of it under water, then you're adding drag to the boat. This is going to slow your boat down. 
+
+- You can always make your boat more boyant by attaching some styrofoam or plastic bottles to it.
+
+- Ensure that there are no leaks in the boat, always pot all holes you drill with the silicone sealent.
+
+- Keep in mind where you put your weights (motors, battries, SparkCore, etc). A level boat is more controllable than a boat which is tilted.
+
+
+## Propultion
+
+1. A single motor (propeller) can only propel you forward. If you want to be able to turn, you will need more control.
+
+- Rudders are commonly used in combination propellers to change directions of a boat.
+
+	![](img/rudder.jpg)
+
+- Rudders can made using servos and some plastic.
+
+
+- Here are some common propultion mechanism.
+
+	- 1 Propeller + 1 Servo controlling a Rudder (in the center)
+	- 2 Propellers + 2 Servos controlling a Rudder (one on each side)
+	- 1 Propeller attached to a Servo (in the center)
+	- 2 Propellers attached to a Servo each (one on each side)
+	- 2 Propellers using differential propultion
+
+- Here are some pictures and ideas
+
+	- [RC bottle boat](http://www.stormthecastle.com/Things/bottle-boat/bottle-boat-2.htm)
+	- [servo boat rudder](https://www.google.com.sg/search?espv=2&biw=1278&bih=678&tbm=isch&sa=1&q=servo+boat+rudder&oq=servo+boat+rudder&gs_l=img.3...8945.11531.0.11708.11.8.0.3.3.0.51.353.8.8.0....0...1c.1.58.img..5.6.144.jebZ-Zn56pE#facrc=_&imgdii=3aZLAU1QvrNkRM%3A%3BBJ7gdxvEA7P9nM%3B3aZLAU1QvrNkRM%3A&imgrc=3aZLAU1QvrNkRM%253A%3BwA_jMX73K_13NM%3Bhttp%253A%252F%252Fwww.towerhobbies.com%252Fproducts%252Faquacraft%252Faqub16%252Faqub16_rudder_550.jpg%3Bhttp%253A%252F%252Fwww.towerhobbies.com%252Fproducts%252Faquacraft%252Faqub16.html%3B550%3B370)
+	- [boat propeller rudder](https://www.google.com.sg/search?espv=2&biw=1278&bih=678&tbm=isch&sa=1&q=rc+boat+propeller+rudder&oq=rc+boat+propeller+rudder&gs_l=img.3...1903.2323.0.3940.3.3.0.0.0.0.45.132.3.3.0....0...1c.1.58.img..3.0.0.h7ekTWspEnw)
+
+
+
