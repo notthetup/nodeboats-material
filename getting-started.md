@@ -94,9 +94,7 @@
 ####Aim: Turn on and off the `D7` LED over TCP.
 
 1. While using Spark Cloud and HTTP is a great way of controlling the Spark Core wirelessly, we need something a with a lot less latency. So we have to ditch HTTP to go with pure TCP.
-
 - [voodoospark](https://github.com/voodootikigod/voodoospark) is a great firmware for the SparkCore which listens to packets over TCP. It implements a RPC style binary protocol which can do basic functions like turning on/off specific pins on the Spark. Just what we need.
-
 - **Load the firmware**
 	1. Get the latest version (> 2.5.0) of voodoospark with `git clone git@github.com:voodootikigod/voodoospark.git`
 	- Load the firmware with [spark-cli](https://github.com/voodootikigod/voodoospark#loading-the-firmware) using :
