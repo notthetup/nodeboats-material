@@ -1,4 +1,5 @@
 # Nodeboat Builder
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/notthetup/nodeboatbuilder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **Nodeboat Builder workshop at [JSConf.Asia 2014](http://2014.jsconf.asia/)**
 
