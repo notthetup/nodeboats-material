@@ -33,7 +33,6 @@
 ####Aim: Turn on and off the `D7` LED with HTTP via curl commands
 
 1. Now that we can control the Spark Core with code, we need to be able to do it wirelessly. SparkCore has a built-in WiFi module (that we configured earlier) that allows us to talk to it over HTTP. Let's see how that works.
-
 - If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
 	1. Get your `Device ID` from [here](https://www.spark.io/build/new#cores) and click on `Core`
 
