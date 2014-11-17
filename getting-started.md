@@ -345,11 +345,10 @@ For starters, lets wire up a L293 Motor Driver with LEDs instead of motors to ch
 1. Follow the schematic below and wire it up accordingly with LEDs instead of
 motors.
 
-![Motor Controller with LED](img/motor-controller-schematic.png)
+	![Motor Controller with LED](img/motor-controller-schematic.png)
 
 
-The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
-
+	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
 - Create a file `motor.js` with the following code:
 
