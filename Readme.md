@@ -31,3 +31,7 @@ The competition will be held at the **Dream Pool at 5.15pm**
 ## Pool times for testing
 
 We can only use the pool to test our boats for 30mins at 3pm, 4pm and 5pm.
+
+## Workshop Material
+
+Check out the [guide for getting started with Nodeboats here](getting-started.md).
