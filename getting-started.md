@@ -118,7 +118,7 @@
 		}
 
 		```
-- **Creat blinking LED with Node**
+- **Create blinking LED with Node**
 	1. Install Spark-io with `npm install spark-io`
 	- [Store the `Device ID` and `Access Token`](https://github.com/rwaldron/spark-io#getting-started) in a `~/.sparkrc` file
 	- Create a [blinking LED node script](https://github.com/rwaldron/spark-io#blink-an-led)
@@ -410,9 +410,9 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 
 #Chapter 3 - Lets make Boat!
 
-## Boyancy
+## Buoyancy
 
-1. Boyancy is critical in making boats. You don't want your boat to sink! 
+1. Buoyancy is critical in making boats. You don't want your boat to sink! 
 
 - Ensure that no water EVER! contacts the electronics. Water and electronics don't mix.
 
@@ -425,7 +425,7 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 - Keep in mind where you put your weights (motors, battries, SparkCore, etc). A level boat is more controllable than a boat which is tilted.
 
 
-## Propultion
+## Propulsion
 
 1. A single motor (propeller) can only propel you forward. If you want to be able to turn, you will need more control.
 
