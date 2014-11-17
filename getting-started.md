@@ -2,9 +2,9 @@
 
 ##Step 1: Setup
 
-####Aim: Turn on and off the `D7` LED on Spark Core from the mobile app
+####Aim: Turn on and off the `D7` LED on Spark Core from the spark-cli
 
-1. **Create a Spark Core account**
+1. **Create a Spark Core account and claim your spark**
 
 	1. Go to the [Spark Core website](https://www.spark.io/)
 	- Click `Launch` to create an account
@@ -14,16 +14,25 @@
 - **Connect the Spark Core**
 	1.  Go through the steps in the [starting docs](http://docs.spark.io/start/)
 	- Plug the micro USB of the Spark Core to your laptop and see the blinking blue light
-- **Connect the Spark Core to a mobile app**
-	1. [Download iPhone or Android app](step-2-install-the-app) `Spark Core`
-	- [Connect the Core](http://docs.spark.io/connect/) to the Wifi
-	- From your mobile app, tap on `D7` pin to turn on and off the LED on the Spark Core. `D7` is the on-board blue LED on the Spark Core.
+- **Claim your Spark Core using spark-cli**
+	1. [Download and install spark-cli](https://www.npmjs.org/package/spark-cli) `npm install -g spark-cli`
+	- [Setup spark-cli on your machine](http://docs.spark.io/cli/#getting-started) with `spark setup`
+	- [Control your SparkCore](http://docs.spark.io/cli/#blink-an-led-with-tinker) from `spark-cli` by turning on and off the LED connected to the "D7" pin
+
+	```shell
+	$ spark call {SPARK_CORE_NAME} digitalwrite D7,HIGH
+	1
+	$ spark call {SPARK_CORE_NAME} digitalwrite D7,LOW
+	1
+	```
+
+	4. We WILL NOT be using the Spark Mobile Apps to claim and configure the SparkCore to ensure that we don't have issues with which Spark Core you connect to.
 
 ##Step 2: Curl
 
 ####Aim: Turn on and off the `D7` LED with HTTP via curl commands
 
-1. Get your `Device ID` and `Access Token`
+1. If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
 	1. Get your `Device ID` from [here](https://www.spark.io/build/new#cores) and click on `Core`
 
 	![](img/device-id.png)
@@ -80,10 +89,18 @@
 
 ##Step 3: Setup with Node.js
 
-####Aim: Turn on and off the `D7` LED with node
+####Aim: Turn on and off the `D7` LED over TCP.
 
-1. **Load the firmware**
-	1. Load the firmware with just the [5-step instructions](https://github.com/voodootikigod/voodoospark#loading-the-firmware)
+1. While using Spark Cloud and HTTP is a great way of controlling the Spark Core wirelessly, we need something a with a lot less latency. So we have to ditch HTTP to go with pure TCP.
+
+2. [voodoospark](https://github.com/voodootikigod/voodoospark) is a great firmware for the SparkCore which listens to packets over TCP. It implements a RPC style binary protocol which can do basic functions like turning on/off specific pins on the Spark. Just what we need.
+
+- **Load the firmware**
+	1. Get the latest version (> 2.5.0) of voodoospark with `git clone git@github.com:voodootikigod/voodoospark.git`
+	- Load the firmware with [spark-cli](https://github.com/voodootikigod/voodoospark#loading-the-firmware) using :
+	```shell
+		$ spark cloud flash {DEVICE_ID} firmware/voodoospark.cpp
+	```
 	- Run the curl command again and see what functions are exposed now
 
 		```shell
@@ -310,13 +327,13 @@
 
 ##Step 2: Wire up with an LED, then motor
 
-1. Follow the schematic below and wire it up accordingly with LEDs instead of 
+1. Follow the schematic below and wire it up accordingly with LEDs instead of
 motors.
 
 ![Motor Controller with LED](img/motor-controller-schematic.png)
 
 
-The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics). 
+The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
 
 - Create a file `motor.js` with the following code:
@@ -362,7 +379,7 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 
 ![Motor Controller with Motors](img/motors-schematic.png)
 
-The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics). 
+The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
 
 - This method of connecting the motor allows us to either turn the motor on or off. You can't control the direction of the motor. If you accidently wired the motor such that it runs backwards then just swap the two pins that connect to the motor.
@@ -373,7 +390,7 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 
 ![Motor Controller with Servo](img/motors-schematic.png)
 
-The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics). 
+The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
 -
  Create a file `servo.js` with the following code:
@@ -416,7 +433,7 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 
 - Ensure that no water EVER! contacts the electronics. Water and electronics don't mix.
 
-- If your boat is heavy and has large portions of it under water, then you're adding drag to the boat. This is going to slow your boat down. 
+- If your boat is heavy and has large portions of it under water, then you're adding drag to the boat. This is going to slow your boat down.
 
 - You can always make your boat more boyant by attaching some styrofoam or plastic bottles to it.
 
