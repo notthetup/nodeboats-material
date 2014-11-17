@@ -407,9 +407,9 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 
 1. Follow the schematic below and add on the servo.
 
-![Motor Controller with Servo](img/motors-schematic.png)
+	![Motor Controller with Servo](img/motors-schematic.png)
 
-The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
+	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
 - Create a file `servo.js` with the following code:
 
