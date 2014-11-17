@@ -467,7 +467,7 @@ Now that we know how to control physical functionality, let's get creative and m
 
 There are no correct answers to how you can design your boat, and it's propultion. Be creative, try stuff out, scour the interwebs for ideas, and come up with something novel. Use any materials avilable (_you may beg, borrrow and 'steal' stuff you need_) to use make our boat float and make it move forward!
 
-Here are some pictures and ideas to start you off.
+- Here are some pictures and ideas to start you off.
 
 	- [RC bottle boat](http://www.stormthecastle.com/Things/bottle-boat/bottle-boat-2.htm)
 	- [servo boat rudder](https://www.google.com.sg/search?espv=2&biw=1278&bih=678&tbm=isch&sa=1&q=servo+boat+rudder&oq=servo+boat+rudder&gs_l=img.3...8945.11531.0.11708.11.8.0.3.3.0.51.353.8.8.0....0...1c.1.58.img..5.6.144.jebZ-Zn56pE#facrc=_&imgdii=3aZLAU1QvrNkRM%3A%3BBJ7gdxvEA7P9nM%3B3aZLAU1QvrNkRM%3A&imgrc=3aZLAU1QvrNkRM%253A%3BwA_jMX73K_13NM%3Bhttp%253A%252F%252Fwww.towerhobbies.com%252Fproducts%252Faquacraft%252Faqub16%252Faqub16_rudder_550.jpg%3Bhttp%253A%252F%252Fwww.towerhobbies.com%252Fproducts%252Faquacraft%252Faqub16.html%3B550%3B370)
