@@ -32,7 +32,9 @@
 
 ####Aim: Turn on and off the `D7` LED with HTTP via curl commands
 
-1. If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
+1. Now that we can control the Spark Core with code, we need to be able to do it wirelessly. SparkCore has a built-in WiFi module (that we configured earlier) that allows us to talk to it over HTTP. Let's see how that works.
+
+- If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
 	1. Get your `Device ID` from [here](https://www.spark.io/build/new#cores) and click on `Core`
 
 	![](img/device-id.png)
@@ -40,7 +42,7 @@
 	- Get your `Access Token` from [here](https://www.spark.io/build/new#cores) and click on `Settings`
 
 	![](img/access-token.png)
-- Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark API. Note the 4 exposed functions "digitalread", "digitalwrite", "analogread" and "analogwrite"
+- Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark Cloud API. Note the 4 exposed functions "digitalread", "digitalwrite", "analogread" and "analogwrite"
 
   ```shell
   $ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
@@ -58,7 +60,7 @@
     ]
   }
   ```
-- Now, turn on and off the `D7` LED with Spark API using the HTTP POST request
+- Now, turn on and off the `D7` LED with Spark Cloud API using the HTTP POST request to the `digitalwrite` endpoint
 
 	1. Turn on the LED with params `D7,HIGH`
 
@@ -136,7 +138,8 @@
 
 		```
 - **Create blinking LED with Node**
-	1. Install Spark-io with `npm install spark-io`
+	1. Spark-io is the companion JS library which can speak the same binary RPC protocol over TCP as the voodoospark does. Let's install that!
+	- Install Spark-io with `npm install spark-io`
 	- [Store the `Device ID` and `Access Token`](https://github.com/rwaldron/spark-io#getting-started) in a `~/.sparkrc` file
 	- Create a [blinking LED node script](https://github.com/rwaldron/spark-io#blink-an-led)
 	- Create the [blinking LED with Johnny Five plugin](https://github.com/rwaldron/spark-io#johnny-five-io-plugin)
@@ -156,6 +159,8 @@
 		board.on("ready", function() {
 		  var led = new five.Led("D7");
 
+		  // This bit of js injects the led variable into the
+		  // repl you get after this script finishes execution.
 		  board.repl.inject({
 		    led: led
 		  });
@@ -171,6 +176,10 @@
 		- `>> led.stop()`
 
 #Chapter 2 - Motors & Servo
+
+Now that we have the SparkCore under our almost realtime control, lets figure out how we can use it to control motors. Motors are awesome as they make things move!
+
+We will be needing a few common electronics components for this part of the workshop. Let's briefly look at what we may need.
 
 ##Step 1: Know the components
 
@@ -327,6 +336,12 @@
 
 ##Step 2: Wire up with an LED, then motor
 
+To control a motor (propeller), we need to use a Motor Driver Integrated Chip (IC). This L293 IC is designed to allow microcontrollers like the Spark Core to control motors, which can draw lots of current.
+
+The L293 Motor Driver is controlled using [Pulse Width Modulation](http://en.wikipedia.org/wiki/Pulse-width_modulation) from the SparkCore. This technique allows us to modulate the power provided to the L293 Motor Driver, and hence control the speed of the motor. Only a few pins on the SparkCore are able to output PWM signals (D0, D1, A0, A1, A4, A5, A6, A7).
+
+For starters, lets wire up a L293 Motor Driver with LEDs instead of motors to check of our circuit works.
+
 1. Follow the schematic below and wire it up accordingly with LEDs instead of
 motors.
 
@@ -375,7 +390,7 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 	>> l.start(100) // left LED should light up bright
 	>> l.stop() // left LED should not light up
 	```
-- Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. VVvvvrrroooommmm vvrrrroooommm ;-)
+- Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. _VVvvvrrroooommmm vvrrrroooommm ;-)_
 
 ![Motor Controller with Motors](img/motors-schematic.png)
 
@@ -385,6 +400,10 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 - This method of connecting the motor allows us to either turn the motor on or off. You can't control the direction of the motor. If you accidently wired the motor such that it runs backwards then just swap the two pins that connect to the motor.
 
 ##Step 3: Add on the servo
+
+A normal motor (DC Motor) that our propellers have allows us to move forward (and maybe backwards), but to change directions, we might need to use a Servo motor. Servos are precision motors that you can turn exact number of degrees from the center.
+
+Servos are great for turning things accurately. In our scenario, we could turn propellers, rudders, fans, etc.
 
 1. Follow the schematic below and add on the servo.
 
@@ -423,23 +442,25 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 	>> s.to(90) // move the servo to move the servo to degree 90
 	```
 - play with other [servo functions from Johnny Five](https://github.com/rwaldron/johnny-five/blob/master/docs/servo.md)
-- Onwards to making the boat now. Yiiiihooooo ;-)
+- Onwards to making the boat now. _Yiiiihooooo ;-)_
 
 #Chapter 3 - Lets make Boat!
 
+Now that we know how to control physical functionality, let's get creative and make a boat. Our boats needs to stay afloat, and it needs to move based on our control.
+
 ## Buoyancy
 
-1. Buoyancy is critical in making boats. You don't want your boat to sink! 
+1. Buoyancy is critical in making boats. You don't want your boat to sink!
 
-- Ensure that no water EVER! contacts the electronics. Water and electronics don't mix.
+- Ensure that no water EVER! comes in contact with the electronics. Water and electronics don't mix.
 
 - If your boat is heavy and has large portions of it under water, then you're adding drag to the boat. This is going to slow your boat down.
 
 - You can always make your boat more boyant by attaching some styrofoam or plastic bottles to it.
 
-- Ensure that there are no leaks in the boat, always pot all holes you drill with the silicone sealent.
+- Ensure that there are no leaks in the boat, always pot all holes you drill with the silicone sealent. _No one ever liked leaky abstractions or boats._
 
-- Keep in mind where you put your weights (motors, battries, SparkCore, etc). A level boat is more controllable than a boat which is tilted.
+- Keep in mind where you put your weights (motors, battries, SparkCore, etc). A level boat is more controllable than a boat which is tilted. _Just like with fonts_
 
 
 ## Propulsion
@@ -450,10 +471,9 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 
 	![](img/rudder.jpg)
 
-- Rudders can made using servos and some plastic.
+- Rudders can made using servos and some acrylic.
 
-
-- Here are some common propultion mechanism.
+- Here are some common propultion mechanism ideas.
 
 	- 1 Propeller + 1 Servo controlling a Rudder (in the center)
 	- 2 Propellers + 2 Servos controlling a Rudder (one on each side)
@@ -461,7 +481,12 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 	- 2 Propellers attached to a Servo each (one on each side)
 	- 2 Propellers using differential propultion
 
-- Here are some pictures and ideas
+
+## Ideas
+
+There are no correct answers to how you can design your boat, and it's propultion. Be creative, try stuff out, scour the interwebs for ideas, and come up with something novel. Use any materials avilable (_you may beg, borrrow and 'steal' stuff you need_) to use make our boat float and make it move forward!
+
+Here are some pictures and ideas to start you off.
 
 	- [RC bottle boat](http://www.stormthecastle.com/Things/bottle-boat/bottle-boat-2.htm)
 	- [servo boat rudder](https://www.google.com.sg/search?espv=2&biw=1278&bih=678&tbm=isch&sa=1&q=servo+boat+rudder&oq=servo+boat+rudder&gs_l=img.3...8945.11531.0.11708.11.8.0.3.3.0.51.353.8.8.0....0...1c.1.58.img..5.6.144.jebZ-Zn56pE#facrc=_&imgdii=3aZLAU1QvrNkRM%3A%3BBJ7gdxvEA7P9nM%3B3aZLAU1QvrNkRM%3A&imgrc=3aZLAU1QvrNkRM%253A%3BwA_jMX73K_13NM%3Bhttp%253A%252F%252Fwww.towerhobbies.com%252Fproducts%252Faquacraft%252Faqub16%252Faqub16_rudder_550.jpg%3Bhttp%253A%252F%252Fwww.towerhobbies.com%252Fproducts%252Faquacraft%252Faqub16.html%3B550%3B370)
