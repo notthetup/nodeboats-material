@@ -35,14 +35,10 @@
 1. Now that we can control the Spark Core with code, we need to be able to do it wirelessly. SparkCore has a built-in WiFi module (that we configured earlier) that allows us to talk to it over HTTP. Let's see how that works.
 - If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
 	1. Get your `Device ID` from [here](https://www.spark.io/build/new#cores) and click on `Core`
-
-	![](img/device-id.png)
-
+		![](img/device-id.png)
 	- Get your `Access Token` from [here](https://www.spark.io/build/new#cores) and click on `Settings`
-
-	![](img/access-token.png)
+		![](img/access-token.png)
 - Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark Cloud API. Note the 4 exposed functions "digitalread", "digitalwrite", "analogread" and "analogwrite"
-
   ```shell
   $ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
 
@@ -341,12 +337,9 @@ For starters, lets wire up a L293 Motor Driver with LEDs instead of motors to ch
 
 1. Follow the schematic below and wire it up accordingly with LEDs instead of
 motors.
-
 	![Motor Controller with LED](img/motor-controller-schematic.png)
 
-
 	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
-
 - Create a file `motor.js` with the following code:
 
 	```js
@@ -388,11 +381,9 @@ motors.
 	```
 - Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. _VVvvvrrroooommmm vvrrrroooommm ;-)_
 
-![Motor Controller with Motors](img/motors-schematic.png)
+	![Motor Controller with Motors](img/motors-schematic.png)
 
-The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
-
-
+	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 - This method of connecting the motor allows us to either turn the motor on or off. You can't control the direction of the motor. If you accidently wired the motor such that it runs backwards then just swap the two pins that connect to the motor.
 
 ##Step 3: Add on the servo
@@ -449,26 +440,20 @@ Now that we know how to control physical functionality, let's get creative and m
 1. Buoyancy is critical in making boats. You don't want your boat to sink!
 
 - Ensure that no water EVER! comes in contact with the electronics. Water and electronics don't mix.
-
 - If your boat is heavy and has large portions of it under water, then you're adding drag to the boat. This is going to slow your boat down.
-
 - You can always make your boat more boyant by attaching some styrofoam or plastic bottles to it.
-
 - Ensure that there are no leaks in the boat, always pot all holes you drill with the silicone sealent. _No one ever liked leaky abstractions or boats._
-
 - Keep in mind where you put your weights (motors, battries, SparkCore, etc). A level boat is more controllable than a boat which is tilted. _Just like with fonts_
 
 
 ## Propulsion
 
 1. A single motor (propeller) can only propel you forward. If you want to be able to turn, you will need more control.
-
 - Rudders are commonly used in combination propellers to change directions of a boat.
 
 	![](img/rudder.jpg)
 
 - Rudders can made using servos and some acrylic.
-
 - Here are some common propultion mechanism ideas.
 
 	- 1 Propeller + 1 Servo controlling a Rudder (in the center)
