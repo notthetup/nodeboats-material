@@ -411,8 +411,7 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 
 The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
--
- Create a file `servo.js` with the following code:
+- Create a file `servo.js` with the following code:
 
 	```js
 	var five = require("johnny-five");
@@ -434,6 +433,7 @@ The original files for these schematic (made in [Fritzing](http://fritzing.org/d
 
 	});
 	```
+
 	Run this code with `node servo.js` - yes the servo should move!
 
 	```js
