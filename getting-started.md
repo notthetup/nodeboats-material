@@ -397,7 +397,6 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 	![Motor Controller with Servo](img/motors-schematic.png)
 
 	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
-
 - Create a file `servo.js` with the following code:
 
 	```js
@@ -438,7 +437,6 @@ Now that we know how to control physical functionality, let's get creative and m
 ## Buoyancy
 
 1. Buoyancy is critical in making boats. You don't want your boat to sink!
-
 - Ensure that no water EVER! comes in contact with the electronics. Water and electronics don't mix.
 - If your boat is heavy and has large portions of it under water, then you're adding drag to the boat. This is going to slow your boat down.
 - You can always make your boat more boyant by attaching some styrofoam or plastic bottles to it.
