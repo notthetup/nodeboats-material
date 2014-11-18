@@ -17,6 +17,7 @@
 - **Claim your Spark Core using spark-cli**
 	1. [Download and install spark-cli](https://www.npmjs.org/package/spark-cli) `npm install -g spark-cli`
 	- [Setup spark-cli on your machine](http://docs.spark.io/cli/#getting-started) with `spark setup`
+	- Once your Spark Core is setup, the [LED on top it will start breathing cyan](img/breathing.gif)
 	- [Control your SparkCore](http://docs.spark.io/cli/#blink-an-led-with-tinker) from `spark-cli` by turning on and off the LED connected to the "D7" pin
 
 	```shell
@@ -91,11 +92,12 @@
 1. While using Spark Cloud and HTTP is a great way of controlling the Spark Core wirelessly, we need something a with a lot less latency. So we have to ditch HTTP to go with pure TCP.
 - [voodoospark](https://github.com/voodootikigod/voodoospark) is a great firmware for the SparkCore which listens to packets over TCP. It implements a RPC style binary protocol which can do basic functions like turning on/off specific pins on the Spark. Just what we need.
 - **Load the firmware**
-	1. Get the latest version (> 2.5.0) of voodoospark with `git clone git@github.com:voodootikigod/voodoospark.git`
-	- Load the firmware with [spark-cli](https://github.com/voodootikigod/voodoospark#loading-the-firmware) using :
+	1. The latest version (> 0.4.5) of the voodoospark firmware is [bundled together with spark-cli as a binary](https://github.com/spark/spark-cli/tree/master/js/binaries).
+	- spark-cli[ provides a handy way of flashing voodoospark](https://github.com/spark/spark-cli#flashing-a-known-app) (or reset the Spark Core to the original Tinker firmware) using the command :
 	```shell
-		$ spark cloud flash {DEVICE_ID} firmware/voodoospark.cpp
+		$ spark flash {DEVICE_ID} voodoo
 	```
+	- Wait for the core to start breathing cyan.
 	- Run the curl command again and see what functions are exposed now
 
 		```shell
