@@ -9,6 +9,10 @@ All hands hoay! Welcome t' t' NodeBoats Builder workshop. We'll be makin' some s
 3. Decorations for your boat. Pirates, canons, stickers, sails, go crazy!
 4. An idea for the chasis of your boat. We will provide you some material (plastic boxes, bits and pieces of wood and plastic), but you can bring in more things that you want to use for your boat.
 
+## Teams
+
+We'll be working in teams of two. If you couldn't find a Player2 at registration, then we can pair you up at the begining of the workshop.
+
 
 ## Timing
 
