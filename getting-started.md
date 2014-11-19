@@ -350,24 +350,24 @@ motors.
 - The connections you will be making are.
 
 
-| #| Signal         | Source             | Destination  			       |
-| -| -------------- |:------------------:| -------------------------:|
-| 1| Power(VCC)     | Battery Pack Red   | Power Rail on Breadboard  |
-| 2| Ground(Gnd)    | Battery Pack Black | Ground Rail on Breadboard |
-| 3| Power(VCC)     | Vin on SparkCore   | Power Rail on Breadboard  |
-| 4| Power(VCC)     | Pin 16 on L293D    | Power Rail on Breadboard  |
-| 5| Power(VCC)     | Pin 8 on L293D     | Power Rail on Breadboard  |
-| 6| Ground(Gnd)    | Gnd on SparkCore   | Ground Rail on Breadboard |
-| 7| Ground(Gnd)    | Pin 12 on L293D    | Ground Rail on Breadboard |
-| 8| Enable Motor   | Pin 9 on L293D     | Power Rail on Breadboard  |
-| 9| Motor 1 Control| Pin A6 on SparkCore| Pin 15 on L293D           |
-|10| Motor 2 Control| Pin A7 on SparkCore| Pin 10 on L293D           |
-|11| LED 1 Positive | Pin 11 on L293D    | LED 1 Positive            |
-|12| LED 1 Negative | Pin 12 on L293D    | LED 1 Negative (shorter)  |
-|13| LED 2 Positive | Pin 14 on L293D    | LED 2 Positive            |
-|14| LED 2 Negative | Pin 13 on L293D    | LED 2 Negative (shorter)  |
-|15| Diode          | Ground Rail on Breadboard | Pin 11 on L293D    |
-|16| Diode          | Ground Rail on Breadboard | Pin 14 on L293D    |
+| #| Signal         | Source                    | Destination  			        |
+| -| -------------- |:-------------------------:| -------------------------:|
+| 1| Power(VCC)     | Battery Pack Red          | Power Rail on Breadboard  |
+| 2| Ground(Gnd)    | Battery Pack Black        | Ground Rail on Breadboard |
+| 3| Power(VCC)     | Vin on SparkCore          | Power Rail on Breadboard  |
+| 4| Power(VCC)     | Pin 16 on L293D           | Power Rail on Breadboard  |
+| 5| Power(VCC)     | Pin 8 on L293D            | Power Rail on Breadboard  |
+| 6| Ground(Gnd)    | Gnd on SparkCore          | Ground Rail on Breadboard |
+| 7| Ground(Gnd)    | Pin 12 on L293D           | Ground Rail on Breadboard |
+| 8| Enable Motor   | Pin 9 on L293D            | Power Rail on Breadboard  |
+| 9| Motor 1 Control| Pin A6 on SparkCore       | Pin 15 on L293D           |
+|10| Motor 2 Control| Pin A7 on SparkCore       | Pin 10 on L293D           |
+|11| LED 1 Positive | Pin 11 on L293D           | LED 1 Positive            |
+|12| LED 1 Negative | Pin 12 on L293D           | LED 1 Negative (shorter)  |
+|13| LED 2 Positive | Pin 14 on L293D           | LED 2 Positive            |
+|14| LED 2 Negative | Pin 13 on L293D           | LED 2 Negative (shorter)  |
+|15| Diode          | Ground Rail on Breadboard | Pin 11 on l293d           |
+|16| Diode          | Ground Rail on Breadboard | Pin 14 on L293D           |
 
 
 
