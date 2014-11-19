@@ -412,6 +412,28 @@ motors.
 	![Motor Controller with Motors](img/motors-schematic.png)
 
 	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
+
+- Here are the connections for the updated schematic.
+
+| No| Signal           | Source                    | Destination  			        |
+|---|------------------|---------------------------|---------------------------|
+| 1 | Power(VCC)       | Battery Pack Red          | Power Rail on Breadboard  |
+| 2 | Ground(Gnd)      | Battery Pack Black        | Ground Rail on Breadboard |
+| 3 | Power(VCC)       | Vin on SparkCore          | Power Rail on Breadboard  |
+| 4 | Power(VCC)       | Pin 16 on L293D           | Power Rail on Breadboard  |
+| 5 | Power(VCC)       | Pin 8 on L293D            | Power Rail on Breadboard  |
+| 6 | Ground(Gnd)      | Gnd on SparkCore          | Ground Rail on Breadboard |
+| 7 | Ground(Gnd)      | Pin 12 on L293D           | Ground Rail on Breadboard |
+| 8 | Enable Motor     | Pin 9 on L293D            | Power Rail on Breadboard  |
+| 9 | Motor 1 Control  | Pin A6 on SparkCore       | Pin 15 on L293D           |
+|10 | Motor 2 Control  | Pin A7 on SparkCore       | Pin 10 on L293D           |
+|11 | _Motor 1 Pin 1_  | Pin 11 on L293D           | LED 1 Positive            |
+|12 | _Motor 1 Pin 2_  | Pin 12 on L293D           | LED 1 Negative (shorter)  |
+|13 | _Motor 2 Pin 1_  | Pin 14 on L293D           | LED 2 Positive            |
+|14 | _Motor 1 Pin 2_  | Pin 13 on L293D           | LED 2 Negative (shorter)  |
+|15 | Diode            | Ground Rail on Breadboard | Pin 11 on l293d           |
+|16 | Diode            | Ground Rail on Breadboard | Pin 14 on L293D           |
+
 - This method of connecting the motor allows us to either turn the motor on or off. You can't control the direction of the motor. If you accidently wired the motor such that it runs backwards then just swap the two pins that connect to the motor.
 
 ##Step 3: Add on the servo
