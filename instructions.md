@@ -1,6 +1,6 @@
 # Instructions for NodeBoatBuilder Attendees
 
-All hands hoay! Welcome t' t' NodeBoats Builder workshop. We'll be makin' some sea farin' vessels today! Let's find out whose vessle will find the booty and whose will scuttle! Hahaha! And when we're all done, head out to the sea for some grog.
+All hands hoay! Welcome t' t' NodeBoats Builder workshop. We'll be makin' some sea farin' vessels on Thursday! Let's find out whose vessle will find the booty and whose will scuttle! Hahaha! And when we're all done, head out to the sea for some grog.
 
 ## To Bring
 
