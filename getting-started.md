@@ -366,8 +366,8 @@ motors.
 |12| LED 1 Negative | Pin 12 on L293D    | LED 1 Negative (shorter)  |
 |13| LED 2 Positive | Pin 14 on L293D    | LED 2 Positive            |
 |14| LED 2 Negative | Pin 13 on L293D    | LED 2 Negative (shorter)  |
-|15| Diode --|>|--- | Ground Rail on Breadboard | Pin 11 on L293D    |
-|16| Diode --|>|--- | Ground Rail on Breadboard | Pin 14 on L293D    |
+|15| Diode          | Ground Rail on Breadboard | Pin 11 on L293D    |
+|16| Diode          | Ground Rail on Breadboard | Pin 14 on L293D    |
 
 
 
