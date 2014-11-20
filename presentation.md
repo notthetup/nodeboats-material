@@ -1,5 +1,9 @@
 # NodeBoats Workshop!
 
+# Material can be found in this github repo
+
+**[bit.ly/nodeboatsworkshop](http://bit.ly/nodeboatsworkshop)**
+
 # Grab your Kits
  - SparkCore Maker Kit
  - 1 Tamiya Submarine Motor
