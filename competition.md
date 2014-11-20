@@ -46,4 +46,6 @@ The competition will be held at the Dream Pool at Amara Sanctuary, at 5.15pm on 
 
 ## Prizes
 
-Something really cool and awesome that we're working on as you read this.
+1. [Hexy](http://arcbotics.com/products/hexy/)
+2. [Sparki](http://arcbotics.com/products/sparki/)
+3. [Raspberry Pi + Sparkfun Robot Board](https://www.sparkfun.com/products/11561)
