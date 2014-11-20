@@ -12,7 +12,28 @@ The competition will be held at the Dream Pool at Amara Sanctuary, at 5.15pm on 
 
 ## Competition Path
 
-To be announced before the competition.
+- Aim : Cross the dreamspool.
+- Start : The wall nearest to the JSConf venue.
+- End : The wall furthest from the JSConf venue.
+- Metrics : How long you take to cross. Fastest wins!
+- Tip : The waterfall on the side causes a constant water current towards the left.
+- If your boat gets stuck or looses connection, we'll retrieve it for you and start over.
+
+
+## Time Slots
+
+1. Red Martians
+2. The Sinking Barge
+3. Superhero
+4. RedMart Shark Boat
+5. The JLT pearl
+6. Cthulu
+7. MeijiJS
+8. Joosh Boat
+9. NodeShip
+10. Milky Way
+11. Astuti
+
 
 ## Judging Criteria
 
