@@ -407,7 +407,48 @@ motors.
 	>> l.start(100) // left LED should light up bright
 	>> l.stop() // left LED should not light up
 	```
-- Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. _VVvvvrrroooommmm vvrrrroooommm ;-)_
+
+## Hacking the Propeller
+
+The Tamiya propeller is designed to be used with battries. We'll hack it to work with our motor controller. We have already drilled the propeller, you'll need to assemble the motor, the seal and the blade. Here are some steps. _There also are instructions on the paper that comes with the kit_
+
+1. The Propeller Kit
+
+![propeller kit](img/propeller-kit.jpg)
+
+- Add the Blue Plastic bracket on the motor. _Click!_
+
+![plastic bracket](img/plastic-bracket.jpg)
+
+- Add **grease** to the motor shaft
+
+- Add **the black rubber seal** onto the shaft
+
+- Fold the cable over
+
+![fold-cable](img/fold-cable.jpg)
+
+- Insert motor in the propeller
+
+![insert cable](img/insert-motor.jpg)
+
+- Add the propeller blades
+
+![add blades](img/add-blades.jpg)
+
+- Thread the wire through the hole in the front half of propeller
+
+![thread wire](img/thread-wire.jpg)
+
+- Attach the two halves of the propeller
+
+![attach halves](img/attach-halves.jpg)
+
+- Fill the wire hole with some silicone sealent.
+
+## Add the Propeller!
+
+1.  Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. _VVvvvrrroooommmm vvrrrroooommm ;-)_
 
 	![Motor Controller with Motors](img/motors-schematic.png)
 
@@ -494,6 +535,7 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 #Chapter 3 - Lets make Boat!
 
 Now that we know how to control physical functionality, let's get creative and make a boat. Our boats needs to stay afloat, and it needs to move based on our control.
+
 
 ## Buoyancy
 
