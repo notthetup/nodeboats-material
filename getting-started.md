@@ -382,11 +382,11 @@ motors.
 
 	board.on("ready", function() {
 	  motorL = new five.Motor({
-	    pin: 'A0'
+	    pin: 'A1'
 	  });
 
 	  motorR = new five.Motor({
-	    pin: 'A1'
+	    pin: 'A0'
 	  });
 
 	  board.repl.inject({
