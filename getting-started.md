@@ -339,7 +339,7 @@ For starters, lets wire up a L293 Motor Driver with LEDs instead of motors to ch
 
 1. Follow the schematic below and wire it up accordingly with LEDs instead of
 motors.
-	![Motor Controller with LED](img/motor-controller-schematic.png)
+	![Motor Controller with LED](img/motor-controller-schematic.jpg)
 
 	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
@@ -359,8 +359,8 @@ motors.
 	| Ground(Gnd)    | Gnd on SparkCore          | Ground Rail on Breadboard |
 	| Ground(Gnd)    | Pin 12 on L293D           | Ground Rail on Breadboard |
 	| Enable Motor   | Pin 9 on L293D            | Power Rail on Breadboard  |
-	| Motor 1 Control| Pin A6 on SparkCore       | Pin 15 on L293D           |
-	| Motor 2 Control| Pin A7 on SparkCore       | Pin 10 on L293D           |
+	| Motor 1 Control| Pin A0 on SparkCore       | Pin 15 on L293D           |
+	| Motor 2 Control| Pin A1 on SparkCore       | Pin 10 on L293D           |
 	| LED 1 Positive | Pin 11 on L293D           | LED 1 Positive            |
 	| LED 1 Negative | Pin 12 on L293D           | LED 1 Negative (shorter)  |
 	| LED 2 Positive | Pin 14 on L293D           | LED 2 Positive            |
@@ -382,11 +382,11 @@ motors.
 
 	board.on("ready", function() {
 	  motorL = new five.Motor({
-	    pin: 'A7'
+	    pin: 'A0'
 	  });
 
 	  motorR = new five.Motor({
-	    pin: 'A6'
+	    pin: 'A1'
 	  });
 
 	  board.repl.inject({
@@ -450,7 +450,7 @@ The Tamiya propeller is designed to be used with battries. We'll hack it to work
 
 1.  Now, replace the LEDs with motors (Tamiya Propellers)! And run the same above code. _VVvvvrrroooommmm vvrrrroooommm ;-)_
 
-	![Motor Controller with Motors](img/motors-schematic.png)
+	![Motor Controller with Motors](img/motors-schematic.jpg)
 
 	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
 
@@ -466,8 +466,8 @@ The Tamiya propeller is designed to be used with battries. We'll hack it to work
 	| Ground(Gnd)      | Gnd on SparkCore          | Ground Rail on Breadboard |
 	| Ground(Gnd)      | Pin 12 on L293D           | Ground Rail on Breadboard |
 	| Enable Motor     | Pin 9 on L293D            | Power Rail on Breadboard  |
-	| Motor 1 Control  | Pin A6 on SparkCore       | Pin 15 on L293D           |
-	| Motor 2 Control  | Pin A7 on SparkCore       | Pin 10 on L293D           |
+	| Motor 1 Control  | Pin A0 on SparkCore       | Pin 15 on L293D           |
+	| Motor 2 Control  | Pin A1 on SparkCore       | Pin 10 on L293D           |
 	| _Motor 1 Pin 1_  | Pin 11 on L293D           | LED 1 Positive            |
 	| _Motor 1 Pin 2_  | Pin 12 on L293D           | LED 1 Negative (shorter)  |
 	| _Motor 2 Pin 1_  | Pin 14 on L293D           | LED 2 Positive            |
@@ -485,7 +485,7 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 
 1. Follow the schematic below and add on the servo.
 
-	![Motor Controller with Servo](img/motors-schematic.png)
+	![Motor Controller with Servo](img/motors-schematic.jpg)
 
 - Here are the connections for connecting the servo.
 
@@ -495,7 +495,7 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 	| Ground(Gnd)      | Battery Pack Black        | Ground Rail on Breadboard |
 	| Power(VCC)       | Orange on Servo           | Power Rail on Breadboard  |
 	| Ground(VCC)      | Brown on Servo            | Ground Rail on Breadboard |
-	| Servo Control    | Yellow on Servo           | Pin A1 on SparkCore |
+	| Servo Control    | Yellow on Servo           | Pin A7 on SparkCore |
 
 
 	The original files for these schematic (made in [Fritzing](http://fritzing.org/download/)) are [here](https://github.com/notthetup/nodeboatbuilder/tree/master/schematics).
@@ -513,7 +513,7 @@ Servos are great for turning things accurately. In our scenario, we could turn p
 	});
 
 	board.on("ready", function() {
-	  var servo = new five.Servo("A1");
+	  var servo = new five.Servo("A7");
 
 	  board.repl.inject({
 	    s: servo
