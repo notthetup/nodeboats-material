@@ -20,14 +20,14 @@
 	- Once your Spark Core is setup, the [LED on top it will start breathing cyan](img/breathing.gif)
 	- [Control your SparkCore](http://docs.spark.io/cli/#blink-an-led-with-tinker) from `spark-cli` by turning on and off the LED connected to the "D7" pin
 
-	```shell
-	$ spark call {SPARK_CORE_NAME} digitalwrite D7,HIGH
-	1
-	$ spark call {SPARK_CORE_NAME} digitalwrite D7,LOW
-	1
-	```
+		```shell
+		$ spark call {SPARK_CORE_NAME} digitalwrite D7,HIGH
+		1
+		$ spark call {SPARK_CORE_NAME} digitalwrite D7,LOW
+		1
+		```
 
-	4. We WILL NOT be using the Spark Mobile Apps to claim and configure the SparkCore to ensure that we don't have issues with which Spark Core you connect to.
+	- We WILL NOT be using the Spark Mobile Apps to claim and configure the SparkCore to ensure that we don't have issues with which Spark Core you connect to.
 
 ##Step 2: Curl
 
@@ -414,35 +414,35 @@ The Tamiya propeller is designed to be used with battries. We'll hack it to work
 
 1. The Propeller Kit
 
-![propeller kit](img/propeller-kit.jpg)
+	![propeller kit](img/propeller-kit.jpg)
 
 - Add the Blue Plastic bracket on the motor. _Click!_
-
-![plastic bracket](img/plastic-bracket.jpg)
+	
+	![plastic bracket](img/plastic-bracket.jpg)
 
 - Add **grease** to the motor shaft
 
 - Add **the black rubber seal** onto the shaft
 
 - Fold the cable over
-
-![fold-cable](img/fold-cable.jpg)
+	
+	![fold-cable](img/fold-cable.jpg)
 
 - Insert motor in the propeller
-
-![insert cable](img/insert-motor.jpg)
+	
+	![insert cable](img/insert-motor.jpg)
 
 - Add the propeller blades
 
-![add blades](img/add-blades.jpg)
+	![add blades](img/add-blades.jpg)
 
 - Thread the wire through the hole in the front half of propeller
 
-![thread wire](img/thread-wire.jpg)
+	![thread wire](img/thread-wire.jpg)
 
 - Attach the two halves of the propeller
 
-![attach halves](img/attach-halves.jpg)
+	![attach halves](img/attach-halves.jpg)
 
 - Fill the wire hole with some silicone sealent.
 
