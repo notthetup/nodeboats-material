@@ -9,6 +9,9 @@
 
 **Time** : 9.15am - 5:30pm *Catch the race at 5:15pm!*
 
+**Photos from the event** : [Nodeboats Workshop Gallery](https://www.facebook.com/media/set/?set=a.615900415180712.1073741830.224477610989663&type=1)
+
+
 ## Aim
 
 Let's Make something! Inspired by [NodeBoats at JSConf](http://makezine.com/2014/06/02/turning-coders-into-makers-at-jsconf-2014/)
