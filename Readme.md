@@ -7,7 +7,7 @@ Check out the [guide for getting started with Nodeboats here](getting-started.md
 
 *This workshop was first carried out at [JS Conf Asia 2014](http://2014.jsconf.asia/). Checkout the [Nodeboats Workshop Gallery](https://www.facebook.com/media/set/?set=a.615900415180712.1073741830.224477610989663&type=1).*
 
-[![](img/nodeboats.png)](Nodeboats Workshop Gallery](https://www.facebook.com/media/set/?set=a.615900415180712.1073741830.224477610989663&type=1)
+[![Nodeboats workshop gallery](img/nodeboats.png)](https://www.facebook.com/media/set/?set=a.615900415180712.1073741830.224477610989663&type=1) 
 
 ## JS Conf Asia 2014
 
