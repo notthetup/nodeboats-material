@@ -7,7 +7,7 @@
 1. **Create a Spark Core account and claim your spark**
 
 	1. Go to the [Spark Core website](https://www.spark.io/)
-	- Click `Launch` to create an account
+	- Click `Build` to create an account
 - Glance through the [documentation](http://docs.spark.io/api/)
 	- Blinking [LED colors/actions and their meanings](http://docs.spark.io/start/#step-3-connect-your-core-to-the-cloud)
 	- Spark Core [pinout diagram](http://docs.spark.io/assets/images/spark-pinout.png)
@@ -335,7 +335,7 @@ To control a motor (propeller), we need to use a Motor Driver Integrated Chip (I
 
 The L293 Motor Driver is controlled using [Pulse Width Modulation](http://en.wikipedia.org/wiki/Pulse-width_modulation) from the SparkCore. This technique allows us to modulate the power provided to the L293 Motor Driver, and hence control the speed of the motor. Only a few pins on the SparkCore are able to output PWM signals (D0, D1, A0, A1, A4, A5, A6, A7).
 
-For starters, lets wire up a L293 Motor Driver with LEDs instead of motors to check of our circuit works.
+For starters, lets wire up a L293 Motor Driver with LEDs instead of motors to check if our circuit works.
 
 1. Follow the schematic below and wire it up accordingly with LEDs instead of
 motors.
