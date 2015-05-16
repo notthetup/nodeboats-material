@@ -19,7 +19,7 @@ The exact design of the boat and the control will be up to the individual team's
 
 ### Teams
 
-- Maximum of 10 teams (that's all we can accommodate in the room)
+- Maximum of 10 teams (that's all the kits we have)
 - Each team has 2 members
 
 ### CampJS V 2015
