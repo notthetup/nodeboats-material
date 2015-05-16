@@ -3,11 +3,11 @@
 
 ## Workshop Material
 
-[What to bring along?](instructions.md)
-[Workshop Introduction](presentation.md)
-[Getting Started](getting-started.md)
-[Ideas/Inspiration](ideas.md)
-[Competition Information](competition.md)
+- [What to bring along?](instructions.md)
+- [Workshop Introduction](presentation.md)
+- [Getting Started](getting-started.md)
+- [Ideas/Inspiration](ideas.md)
+- [Competition Information](competition.md)
 
 ### Aim
 
