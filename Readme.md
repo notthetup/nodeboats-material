@@ -8,6 +8,7 @@
 - [Getting Started](getting-started.md)
 - [Ideas/Inspiration](ideas.md)
 - [Competition Information](competition.md)
+- [What to do if there's no Internet](no-internet.md)
 
 ### Aim
 
