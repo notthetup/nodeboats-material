@@ -3,7 +3,11 @@
 
 ## Workshop Material
 
-Check out the [guide for getting started with Nodeboats here](getting-started.md).
+[What to bring along?](instructions.md)
+[Workshop Introduction](presentation.md)
+[Getting Started](getting-started.md)
+[Ideas/Inspiration](ideas.md)
+[Competition Information](competition.md)
 
 ### Aim
 
@@ -18,9 +22,9 @@ The exact design of the boat and the control will be up to the individual team's
 - Maximum of 10 teams (that's all we can accommodate in the room)
 - Each team has 2 members
 
-#### CampJS V 2015
+### CampJS V 2015
 
-**Nodeboat Builder workshop at [CampJS V](http://v.campjs.com/)**
+**NodeBoats workshop at [CampJS V](http://v.campjs.com/)**
 
 **Date** : 23-24th May 2015
 
@@ -33,6 +37,10 @@ The exact design of the boat and the control will be up to the individual team's
 We will have a competition at the end of the day using the boats everyone created. The exact goal of the competition will be announced during the workshop.
 
 The competition will be held at the **Beach at 5pm**
+
+There will be prizes!
+
+### Links
 
 
 ### History
