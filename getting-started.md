@@ -2,26 +2,28 @@
 
 ##Step 1: Setup
 
-####Aim: Turn on and off the `D7` LED on Spark Core from the spark-cli
+###Note : Spark has officially [changed their name to Particle](http://blog.particle.io/2015/05/13/spark-is-now-particle/). While most of the URLs here should work, if something doesn't work. Please try replacing 'Spark' with 'Particle'.
+
+####Aim: Turn on and off the `D7` LED on Spark Core from the particle-cli
 
 1. **Create a Spark Core account and claim your spark**
 
-	1. Go to the [Spark Core website](https://www.spark.io/)
+	1. Go to the [Spark Core website](https://www.particle.io/)
 	- Click `Build` to create an account
-- Glance through the [documentation](http://docs.spark.io/api/)
-	- Blinking [LED colors/actions and their meanings](http://docs.spark.io/start/#step-3-connect-your-core-to-the-cloud)
-	- Spark Core [pinout diagram](http://docs.spark.io/assets/images/spark-pinout.png)
+- Glance through the [documentation](http://docs.particle.io/core/api/)
+	- Blinking [LED colors/actions and their meanings](http://docs.particle.io/core/#step-3-connect-your-core-to-the-cloud)
+	- Spark Core [pinout diagram](http://docs.particle.io/assets/images/spark-pinout.png)
 - **Connect the Spark Core**
-	1.  Go through the steps in the [starting docs](http://docs.spark.io/start/)
+	1.  Go through the steps in the [starting docs](http://docs.particle.io/core/)
 	- Plug the micro USB of the Spark Core to your laptop and see the blinking blue light
-- **Claim your Spark Core using spark-cli**
-	1. [Download and install spark-cli](https://www.npmjs.org/package/spark-cli) `npm install -g spark-cli`
-	- [Setup spark-cli on your machine](http://docs.spark.io/cli/#getting-started) with `spark setup`
+- **Claim your Spark Core using particles-cli**
+	1. [Download and install particle-cli](https://www.npmjs.org/package/particle-cli) `npm install -g particle-cli`
+	- [Setup particle-cli on your machine](http://docs.particle.io/core/cli/) with `particle setup`
 	- Once your Spark Core is setup, the [LED on top it will start breathing cyan](img/breathing.gif)
-	- [Control your SparkCore](http://docs.spark.io/cli/#blink-an-led-with-tinker) from `spark-cli` by turning on and off the LED connected to the "D7" pin
+	- [Control your SparkCore](http://docs.particle.io/core/cli/#blink-an-led-with-tinker) from `particle-cli` by turning on and off the LED connected to the "D7" pin
 
 		```shell
-		$ spark call {SPARK_CORE_NAME} digitalwrite D7,HIGH
+		$ particle call {SPARK_CORE_NAME} digitalwrite D7,HIGH
 		1
 		$ spark call {SPARK_CORE_NAME} digitalwrite D7,LOW
 		1
@@ -35,13 +37,13 @@
 
 1. Now that we can control the Spark Core with code, we need to be able to do it wirelessly. SparkCore has a built-in WiFi module (that we configured earlier) that allows us to talk to it over HTTP. Let's see how that works.
 - If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
-	1. Get your `Device ID` from [here](https://www.spark.io/build/new#cores) and click on `Core`
+	1. Get your `Device ID` from [here](https://build.particle.io/build#cores) and click on `Core`
 		![](img/device-id.png)
-	- Get your `Access Token` from [here](https://www.spark.io/build/new#cores) and click on `Settings`
+	- Get your `Access Token` from [here](https://build.particle.io/build#cores) and click on `Settings`
 		![](img/access-token.png)
 - Connect to your Spark Core from your laptop's command line with a HTTP GET request using the Spark Cloud API. Note the 4 exposed functions "digitalread", "digitalwrite", "analogread" and "analogwrite"
   ```shell
-  $ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
+  $ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.particle.io/v1/devices/{DEVICE_ID}
 
   {
     "id": "{DEVICE_ID}",
@@ -61,7 +63,7 @@
 	1. Turn on the LED with params `D7,HIGH`
 
 	  ```shell
-	  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,HIGH
+	  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.particle.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,HIGH
 
 	  {
 	    "id": "{DEVICE_ID}",
@@ -74,7 +76,7 @@
 	- Turn off the LED with params `D7,LOW`
 
 	  ```shell
-	  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,HIGH
+	  curl -X POST -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.particle.io/v1/devices/{DEVICE_ID}/digitalwrite -d params=D7,HIGH
 
 	  {
 	    "id": "{DEVICE_ID}",
@@ -92,16 +94,16 @@
 1. While using Spark Cloud and HTTP is a great way of controlling the Spark Core wirelessly, we need something a with a lot less latency. So we have to ditch HTTP to go with pure TCP.
 - [voodoospark](https://github.com/voodootikigod/voodoospark) is a great firmware for the SparkCore which listens to packets over TCP. It implements a RPC style binary protocol which can do basic functions like turning on/off specific pins on the Spark. Just what we need.
 - **Load the firmware**
-	1. The latest version (> 0.4.5) of the voodoospark firmware is [bundled together with spark-cli as a binary](https://github.com/spark/spark-cli/tree/master/js/binaries).
-	- spark-cli[ provides a handy way of flashing voodoospark](https://github.com/spark/spark-cli#flashing-a-known-app) (or reset the Spark Core to the original Tinker firmware) using the command :
+	1. The latest version (> 2.5.0) of the voodoospark firmware is [bundled together with particle-cli as a binary](https://github.com/spark/particle-cli/tree/master/binaries).
+	- particle-cli[ provides a handy way of flashing voodoospark](https://github.com/spark/particle-cli#flashing-a-known-app) (or reset the Spark Core to the original Tinker firmware) using the command :
 	```shell
-		$ spark flash {DEVICE_ID} voodoo
+		$ particle flash {DEVICE_ID} voodoo
 	```
 	- Wait for the core to start breathing cyan.
 	- Run the curl command again and see what functions are exposed now
 
 		```shell
-		$ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}
+		$ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.particle.io/v1/devices/{DEVICE_ID}
 
 		{
 		  "id": "{DEVICE_ID}",
@@ -117,7 +119,7 @@
 	- Check the local IP address of the Spark Core. `result` will give you the IP.
 
 		```shell
-		$ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.spark.io/v1/devices/{DEVICE_ID}/endpoint
+		$ curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" https://api.particle.io/v1/devices/{DEVICE_ID}/endpoint
 
 		{
 		  "cmd": "VarReturn",
@@ -210,8 +212,8 @@ We will be needing a few common electronics components for this part of the work
 		<td>
 			<strong>Spark Core</strong>
 			<ul>
-				<li><a href="http://docs.spark.io/assets/images/spark-pinout.png">pinout diagram</a></li>
-				<li><a href="http://docs.spark.io/start/#step-3-connect-your-core-to-the-cloud">LED colors/actions and their meanings</a></li>
+				<li><a href="http://docs.particle.io/assets/images/spark-pinout.png">pinout diagram</a></li>
+				<li><a href="http://docs.particle.io/start/#step-3-connect-your-core-to-the-cloud">LED colors/actions and their meanings</a></li>
 			</ul>
 		</td>
 		<td><img height=150 src="img/spark.png"></td>
@@ -307,7 +309,7 @@ We will be needing a few common electronics components for this part of the work
 			<strong>Servo</strong>
 			<ul>
 				<li><a href="http://en.wikipedia.org/wiki/Servo_(radio_control)">Wikipedia</a></li>
-				<li><a href="http://docs.spark.io/shields/#setting-up-the-shield-8-micro-servo-1">Spark and servo</a></li>
+				<li><a href="http://docs.particle.io/shields/#setting-up-the-shield-8-micro-servo-1">Spark and servo</a></li>
 				<li><strong>Tip: </strong>For wiring - <em>Yellow</em> is Signal (D0, D1, A0, A1, A4, A5, A6, A7), <em>Orange</em> is +5V (VIN), <em>Brown</em> is ground</li>
 			</ul>
 		</td>
@@ -320,7 +322,7 @@ We will be needing a few common electronics components for this part of the work
 			<strong>Capacitor</strong>
 			<ul>
 				<li><a href="http://en.wikipedia.org/wiki/Capacitor">Wikipedia</a></li>
-				<li><a href="http://docs.spark.io/shields/#setting-up-the-shield-2-electrolytic-capacitor-100uf-5">Capacitors</a></li>
+				<li><a href="http://docs.particle.io/shields/#setting-up-the-shield-2-electrolytic-capacitor-100uf-5">Capacitors</a></li>
 				<li><strong>Tip: </strong> Capacitors have polarity. On the plastic above one of the pins you'll see a light coloured strip with a negative sign "-" on it. Always connect that pin to GND pins or rails </li>
 			</ul>
 		</td>
@@ -417,7 +419,7 @@ The Tamiya propeller is designed to be used with battries. We'll hack it to work
 	![propeller kit](img/propeller-kit.jpg)
 
 - Add the Blue Plastic bracket on the motor. _Click!_
-	
+
 	![plastic bracket](img/plastic-bracket.jpg)
 
 - Add **grease** to the motor shaft
@@ -425,11 +427,11 @@ The Tamiya propeller is designed to be used with battries. We'll hack it to work
 - Add **the black rubber seal** onto the shaft
 
 - Fold the cable over
-	
+
 	![fold-cable](img/fold-cable.jpg)
 
 - Insert motor in the propeller
-	
+
 	![insert cable](img/insert-motor.jpg)
 
 - Add the propeller blades
