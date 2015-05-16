@@ -40,10 +40,12 @@ In case of situations where internet access is flaky or inexistant, [MDNS](http:
 - This [fork of Spark-io](https://github.com/notthetup/spark-io) supports MDNS.
 - You might have to remove the original version of `spark-io`.
 - You can install this using npm and the git url
+
 	```shell
 	npm i notthetup/spark-io
 	```
 - The MDNS version of `spark-io` works exactly the same, but tries to look for MDNS messages if a parameter called `hostname` is passed to the option Object in the constructor of `Spark`.
+
 	```js
 	var board = new five.Board({
 	io: new Spark({
@@ -66,6 +68,7 @@ In case of situations where internet access is flaky or inexistant, [MDNS](http:
 1. Connect the Spark Core to USB.
 2. Put the Spark Core in [dfu mode](http://docs.particle.io/core/modes/#core-modes-dfu-mode-device-firmware-upgrade).
 3. Flash in Tinker using the `particle-cli` command
+
 	```shell
 	particle flash tinker
 	```
