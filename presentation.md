@@ -7,12 +7,12 @@
 # Grab your Kits
  - SparkCore Maker Kit
  - 1 Tamiya Submarine Motor
- - 1 Battery Pack
+ - 1 Battery holder
  - 1 Pack of battries
 
 # Hardware
 
-We have a bunch of hardware, extra motors, tools and stuff on the large table. Help yourself, but don't be greedy!
+We have a bunch of hardware, extra motors, tools and stuff. Help yourself, but don't be greedy!
 
 # Get started with your Spark Core
 
