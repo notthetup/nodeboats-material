@@ -25,7 +25,7 @@
 		```shell
 		$ particle call {SPARK_CORE_NAME} digitalwrite D7,HIGH
 		1
-		$ spark call {SPARK_CORE_NAME} digitalwrite D7,LOW
+		$ particle call {SPARK_CORE_NAME} digitalwrite D7,LOW
 		1
 		```
 
