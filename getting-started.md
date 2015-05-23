@@ -19,6 +19,23 @@
 - **Claim your Spark Core using particles-cli**
 	1. [Download and install particle-cli](https://www.npmjs.org/package/particle-cli) `npm install -g particle-cli`
 	- [Setup particle-cli on your machine](http://docs.particle.io/core/cli/) with `particle setup`
+	- Put your Spark Core into [listening mode](http://docs.particle.io/core/connect/#connecting-your-device-listening-mode).
+	- Get your Spark's UID using `particle identify`
+
+	```shell
+		$ particle identify
+		72398476273648244921384
+	```
+	- Claim your Spark Core using the command `particle device add {SPARK_UID}`
+
+	```shell
+		$ particle device add 72398476273648244921384
+	```
+	- Name your Spark Core using the command `particle core rename {SPARK_UID} {NAME}`
+
+	```shell
+		$ particle core rename 0123456789ABCDEFGHI "pirate frosting"
+	```
 	- Once your Spark Core is setup, the [LED on top it will start breathing cyan](img/breathing.gif)
 	- [Control your SparkCore](http://docs.particle.io/core/cli/#blink-an-led-with-tinker) from `particle-cli` by turning on and off the LED connected to the "D7" pin
 
