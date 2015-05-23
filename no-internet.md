@@ -18,6 +18,8 @@ In case of situations where internet access is flaky or inexistant, [MDNS](http:
 
 - Hence, using the MDNS version of the SparkCore firmware, you won't be able to use the original version of `spark-io` or Spark APIs.
 
+- You will have to __turn off your firewall__ to allow MDNS to work.
+
 ### Steps
 
 1. Open the [Particle Build IDE](https://build.particle.io/build/#code).
