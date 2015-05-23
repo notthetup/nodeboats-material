@@ -72,6 +72,6 @@ In case of situations where internet access is flaky or inexistant, [MDNS](http:
 3. Flash in Tinker using the `particle-cli` command
 
 	```shell
-	particle flash tinker
+	particle flash --usb tinker
 	```
 4. Wait for the Spark Core to be breathing cyan again before using it normally.
