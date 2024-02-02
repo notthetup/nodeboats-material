@@ -1,10 +1,10 @@
-#Chapter 1 - Spark Core
+# Chapter 1 - Spark Core
 
-##Step 1: Setup
+# #Step 1: Setup
 
-###Note : Spark has officially [changed their name to Particle](http://blog.particle.io/2015/05/13/spark-is-now-particle/). While most of the URLs here should work, if something doesn't work. Please try replacing 'Spark' with 'Particle'.
+### Note : Spark has officially [changed their name to Particle](http://blog.particle.io/2015/05/13/spark-is-now-particle/). While most of the URLs here should work, if something doesn't work. Please try replacing 'Spark' with 'Particle'.
 
-####Aim: Turn on and off the `D7` LED on Spark Core from the particle-cli
+#### Aim: Turn on and off the `D7` LED on Spark Core from the particle-cli
 
 1. **Create a Spark Core account and claim your spark**
 
@@ -48,9 +48,9 @@
 
 	- We WILL NOT be using the Spark Mobile Apps to claim and configure the SparkCore to ensure that we don't have issues with which Spark Core you connect to.
 
-##Step 2: Curl
+## Step 2: Curl
 
-####Aim: Turn on and off the `D7` LED with HTTP via curl commands
+#### Aim: Turn on and off the `D7` LED with HTTP via curl commands
 
 1. Now that we can control the Spark Core with code, we need to be able to do it wirelessly. SparkCore has a built-in WiFi module (that we configured earlier) that allows us to talk to it over HTTP. Let's see how that works.
 - If you forget your `Device ID` and `Access Token` you can also get it from the Spark Website.
@@ -104,9 +104,9 @@
 	  }
 	  ```
 
-##Step 3: Setup with Node.js
+## Step 3: Setup with Node.js
 
-####Aim: Turn on and off the `D7` LED over TCP.
+#### Aim: Turn on and off the `D7` LED over TCP.
 
 1. While using Spark Cloud and HTTP is a great way of controlling the Spark Core wirelessly, we need something a with a lot less latency. So we have to ditch HTTP to go with pure TCP.
 - [voodoospark](https://github.com/voodootikigod/voodoospark) is a great firmware for the SparkCore which listens to packets over TCP. It implements a RPC style binary protocol which can do basic functions like turning on/off specific pins on the Spark. Just what we need.
@@ -189,13 +189,13 @@
 		- `>> led.blink()`
 		- `>> led.stop()`
 
-#Chapter 2 - Motors & Servo
+# Chapter 2 - Motors & Servo
 
 Now that we have the SparkCore under our almost realtime control, lets figure out how we can use it to control motors. Motors are awesome as they make things move!
 
 We will be needing a few common electronics components for this part of the workshop. Let's briefly look at what we may need.
 
-##Step 1: Know the components
+## Step 1: Know the components
 
 <table style="vertical-slign:top;">
 	<tr>
@@ -348,7 +348,7 @@ We will be needing a few common electronics components for this part of the work
 	</tr>
 </table>
 
-##Step 2: Wire up with an LED, then motor
+## Step 2: Wire up with an LED, then motor
 
 To control a motor (propeller), we need to use a Motor Driver Integrated Chip (IC). This L293 IC is designed to allow microcontrollers like the Spark Core to control motors, which can draw lots of current.
 
